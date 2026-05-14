@@ -1,30 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Jogo de Heróis</title>
-    <div id="escolha_herois">
-        <label for="escolha_herois">Escolha um herói:</label>
-        <select name="herois" id="herois">
-            <option value="guerreiro">Guerreiro</option>
-            <option value="mago">Mago</option>
-            <option value="arqueiro">Arqueiro</option>
-        </select>
-    </div>
-    <div id="escolha_armas">
-        <form>
-            <label for="escolha_armas">Escolha uma arma:</label>
-            <input type="radio" id="escolha_espada" name="arma" value="arma">
-            <label for="espada">Espada</label><br>
-            <input type="radio" id="escolha_cajado" name="arma" value="arma">
-            <label for="cajado">Cajado</label><br>
-            <input type="radio" id="escolha_arco" name="arma" value="arma">
-            <label for="arco">Arco</label>
-        </form>
-    </div>
 </head>
-<body>  
-<script src=""></script>
+<body>
+    <div class="arena" id="arena">
+        <h2>⚒️ARENA DE BATALHA⚒️</h2>
+        <div class="controles">
+            <label>Escolha um herói:</label>
+            <select id="classe">
+                <option value="Guerreiro">Guerreiro</option>
+                <option value="Mago">Mago</option>
+                <option value="Arqueiro">Arqueiro</option>
+            </select>
+            <label>Equipe uma arma:</label>
+            <input type="text" id="arma" placeholder="Ex: Espada, Cajado, Arco ">
+            <button onclick="lutar()">INICIAR O COMBATE</button>  
+        </div>
+
+            <div id="log">Agurdando o desafiante...</div>
+
+    </div>
+
+    <script src="./batalha.js"></script>
 </body>
 </html>     
