@@ -18,11 +18,11 @@ if(!arma){
             log.innerHTML = resultado;
         
         }else if(dado >12){
-            resultado += "<span class='sucesso'> CRÍTICO: Mesmo sem sua fiel lâmina você esmaga o oponente</span>";
+            resultado += "<span class='sucesso'> DANO CRÍTICO NO OPONENTE: Mesmo sem sua fiel lâmina você esmaga o oponente</span>";
             log.innerHTML = resultado;
         
         }else{
-            resultado += "<span class='derrota'> DERROTA: O oponente foi mais rápido, "+arma+" foi inútil</span>";
+            resultado += "<span class='derrota'> DERROTA: O oponente foi mais rápido, "+arma+" foi inútil e você morreu!!. Fim de jogo.</span>";
             log.innerHTML = resultado;
         }
         break;
@@ -32,12 +32,12 @@ if(!arma){
             resultado += "<span class='sucesso'> VITÓRIA: Você vaporiza o oponente com um só raio de seu cajado. </span>";
             log.innerHTML = resultado;
         
-        }else if(dado >15){
+        }else if(dado === 15){
             resultado += "<span class='sucesso'> VITÓRIA: Você esmaga o oponente mesmo sem seu fiel cajado. </span>";
             log.innerHTML = resultado;
         
         }else{
-            resultado += "<span class='derrota'> DERROTA: O oponente foi mais rápido, "+arma+" foi inútil</span>";
+            resultado += "<span class='derrota'> DERROTA: O oponente foi mais rápido, "+arma+" foi inútil e você morreu!!. Fim de jogo. </span>";
             log.innerHTML = resultado;
         }
         break;
@@ -52,7 +52,7 @@ if(!arma){
             log.innerHTML = resultado;
         
         }else{
-            resultado += "<span class='derrota'> DERROTA: O oponente foi mais rápido, "+arma+" foi inútil</span>";
+            resultado += "<span class='derrota'> DERROTA: O oponente foi mais rápido, "+arma+" foi inútil e você morreu!! Fim de jogo. </span>";
             log.innerHTML = resultado;
         }
         break;
