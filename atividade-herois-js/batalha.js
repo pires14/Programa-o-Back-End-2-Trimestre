@@ -17,7 +17,7 @@ if(!arma){
             resultado += "<span class='sucesso'> VITÓRIA: Você corta o oponente ao meio com um só golpe de sua espada </span>";
             log.innerHTML = resultado;
         
-        }else if(dado >15){
+        }else if(dado >12){
             resultado += "<span class='sucesso'> CRÍTICO: Mesmo sem sua fiel lâmina você esmaga o oponente</span>";
             log.innerHTML = resultado;
         
