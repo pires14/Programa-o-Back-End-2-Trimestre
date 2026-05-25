@@ -1,30 +1,47 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Jogo de Heróis</title>
-</head>
-<body>
-    <div class="arena" id="arena">
-        <h2>⚒️ARENA DE BATALHA⚒️</h2>
-        <div class="controles">
-            <label>Escolha um herói:</label>
-            <select id="classe">
-                <option value="guerreiro">Guerreiro</option>
-                <option value="mago">Mago</option>
-                <option value="arqueiro">Arqueiro</option>
-            </select>
-            <label>Equipe uma arma:</label>
-            <input type="text" id="arma" placeholder="Ex: Espada, Cajado, Arco ">
-            <button onclick="lutar()">INICIAR O COMBATE</button>  
-        </div>
+function lutar(){
+    const classe = document.getElementById('classe').value;
+    const arma = document.getElementById('arma').value.trim();
+    const log = document.getElementById('log');
 
-            <div id="log">Agurdando o desafiante...</div>
+    if(!arma){
+        log.innerHTML = "⚔️Escolha uma arma⚔️";
+        return;
+    }
 
-    </div>
+    const dado = Math.floor(Math.random() * 20) + 1;
+    let resultado = `🎲 Dado: ${dado} | <strong>${classe}</strong> com <strong>${arma}</strong>`;
 
-    <script src="./batalha.js"></script>
-</body>
-</html>     
+    switch(classe){
+        case "guerreiro":
+        if(arma.toLowerCase()==="espada" && dado>5){
+            resultado += "<span class='sucesso'> VITÓRIA: Você corta o oponente ao meio com um só golpe de sua espada </span>";
+        }else if(dado >12){
+            resultado += "<span class='sucesso'> DANO CRÍTICO NO OPONENTE: Mesmo sem sua fiel lâmina você esmaga o oponente</span>";
+        }else{
+            resultado += "<span class='derrota'> DERROTA: O oponente foi mais rápido, "+arma+" foi inútil e você morreu!!. Fim de jogo.</span>";
+        }
+        break;
+        
+        case "mago":
+        if(arma.toLowerCase()==="cajado" && dado>8){
+            resultado += "<span class='sucesso'> VITÓRIA: Você vaporiza o oponente com um só raio de seu cajado. </span>";
+        }else if(dado === 15){
+            resultado += "<span class='sucesso'> VITÓRIA: Você esmaga o oponente mesmo sem seu fiel cajado. </span>";
+        }else{
+            resultado += "<span class='derrota'> DERROTA: O oponente foi mais rápido, "+arma+" foi inútil e você morreu!!. Fim de jogo. </span>";
+        }
+        break;
+
+        case "arqueiro":
+        if(arma.toLowerCase()==="arco" && dado>10){
+            resultado += "<span class='sucesso'> VITÓRIA: Você acerta em cheio a cabeça do seu oponente com uma só flecha </span>";
+        }else{
+            resultado += "<span class='derrota'> DERROTA: O oponente foi mais rápido, "+arma+" foi inútil e você morreu!! Fim de jogo. </span>";
+        }
+        break;
+        
+        default:
+            resultado = "Você ficou paralisado de medo.";
+    }
+    log.innerHTML = resultado;
+}
