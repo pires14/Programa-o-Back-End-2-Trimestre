@@ -7,20 +7,6 @@ Modifique a classe Heroi para que o construtor também receba e armazene esse n�
  no painel de resultado acessando a propriedade do objeto."
 */
 
-let pessoa = {
-    nome: "João",
-    idade: 17,
-    altura: 1.8,
-    profissao: "Estudante",
-
-    estudar: function(){
-        console.log("O joão foi estudar.");
-    }
-};
-console.log(pessoa.nome);
-pessoa.estudar();
-
-
 /*O objeto é classificado com uma classe. */
 /*Criação da classe */
 class heroi{
@@ -38,5 +24,13 @@ function criarHeroi(){
 
     /*Criando o objeto dinâmicamente com os valores dos campos. */
     const novoHeroi = new heroi(nomeDigitado, classeSelecionada);
+
+    /*Exibindo na tela através das propriedades do objeto */
+    document.getElementById('resultado').style.display = "block";
+    document.getElementById('dadosHeroi').innerHTML = `
+    Nome: ${novoHeroi.nome},<br> Classe: ${novoHeroi.classe}
+
+    `;
+
 }
 
