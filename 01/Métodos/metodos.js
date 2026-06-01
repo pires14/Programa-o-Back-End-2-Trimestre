@@ -23,7 +23,6 @@ monstroBatalha = new Monstro(nomeDigitado, hpInicial);
 function trocaTela(){
     document.getElementById('statusNome').innerHTML = monstroBatalha.nome;
     document.getElementById('statusHp').innerHTML = `Vida atual : <strong>${monstroBatalha.hp}</strong>❤️❤️`;
-
 }
 document.getElementById('painel-criacao').style.display="none";
 document.getElementById('painel-combate').style.display="block";
@@ -32,5 +31,9 @@ trocaTela();
 
 }
 function baterNoMonstro(){
-
+    const valorDano = Number(document.getElementById('danoInput').value);
+    const mensagem = monstroBatalha.receberDano(valorDano);
+    document.getElementById('log').innerHTML = mensagem;
+    trocaTela();
 }
+
