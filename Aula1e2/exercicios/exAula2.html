@@ -18,15 +18,14 @@ que for chamado. Complete a função JavaScript do botão para atualizar a tela.
     <script>
         const jogo = {
             pontos: 0,
-            marcar: function marcarPonto(){
-                this.pontos ++;
+            marcarPontos: function(){
+                this.pontos +=10;
             }
-        }
+        };
         function ganharPontos(){
-            jogo.marcar();
-            document.getElementById('txtPontos').innerHTML = jogo.pontos
+            jogo.marcarPontos();
+            document.getElementById('txtPontos').innerHTML = jogo.pontos;
         }
-        
     </script>
 </body>
 </html>
