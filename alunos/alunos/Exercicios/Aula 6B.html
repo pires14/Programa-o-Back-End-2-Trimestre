@@ -19,7 +19,21 @@ contrário deve impedir a venda retornando um aviso de erro.
     <p id="msgVoo" style="color: blue;"></p>
 
     <script>
-       
+       const voo = {
+            assentosLivres: 5,
+            comprarPassagem: function(passagensCompradas){
+                if(passagensCompradas <= this.assentosLivres){
+                    this.assentosLivres -= passagensCompradas;
+                    return "Assentos comprados com sucesso!"}
+                else{
+                    return "Erro: Não há assentos suficiente para este pedido!"}}};
+        function executarCompra(){
+            let inputPassagens = Number(document.getElementById('valPassagens').value);
+            let aviso = voo.comprarPassagem(inputPassagens);
+            document.getElementById('txtAssentos').innerHTML = voo.assentosLivres;
+            document.getElementById('msgVoo').innerText = aviso;
+        }
     </script>
+
 </body>
 </html>
