@@ -19,7 +19,25 @@ avisando que está no máximo.
     <p id="msgVol" style="color: red;"></p>
 
     <script>
-       
+       const som = {
+        volumeAtual: 0,
+        volumeMaximo: 10,
+        aumentarVolume: function(){
+            if(this.volumeAtual <  this.volumeMaximo){
+                this.volumeAtual +=2;
+                return "O volume foi aumentado";
+            }
+            else{
+                return "Aviso: o volume máximo de 10 foi atingido!!";
+            }
+        }
+       }
+       function maisSom(){
+        let mensagem = som.aumentarVolume();
+        document.getElementById('txtVol').innerHTML = som.volumeAtual;
+        document.getElementById('msgVol').innerHTML = mensagem;
+
+       }
     </script>
 </body>
 </html>
