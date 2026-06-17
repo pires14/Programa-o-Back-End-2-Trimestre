@@ -22,7 +22,23 @@ para aproveitar o cálculo pronto do método vizinho.
     <p id="txtResultado">Status: ---</p>
 
     <script>
-        
+        const boletim = {
+            n1: 8,
+            n2: 5,
+            calcularMedia: function(){
+                return Number((this.n1 + this.n2)/2)
+            },
+            obterSituacao: function(){
+                if(this.calcularMedia() > 6){return "Aprovado."}
+                else{return "Reprovado."
+                }
+            }
+            
+        }
+        function verificarBoletim(){
+            let mensagem = boletim.obterSituacao();
+            document.getElementById('txtResultado').innerHTML = mensagem;
+        }
     </script>
 </body>
 </html>

@@ -24,18 +24,22 @@ Ele possui a propriedade quantidade controlada por dois botões distintos no HTM
         const carrinho = {
             quantidade: 0,
             adicionar: function(){
-                this.quantidade += 1;
-                return "Uma camiseta foi adicionada";
-                
-                
+                this.quantidade ++;
             },
             remover: function(){
-                this.quantidade -=1
-            },
-            if(this.quantidade == 0){
-
+                if(this.quantidade>0){
+                    this.quantidade --;
+                    
+                }
             }
-            
+        }
+        function adicionarCamiseta(){
+            carrinho.adicionar();
+            document.getElementById('qtdCamiseta').innerHTML = carrinho.quantidade;
+        }
+        function removerCamiseta(){
+            carrinho.remover();
+            document.getElementById('qtdCamiseta').innerHTML = carrinho.quantidade;
         }
     </script>
 </body>
